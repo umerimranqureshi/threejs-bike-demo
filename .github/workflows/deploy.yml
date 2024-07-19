@@ -26,11 +26,11 @@ jobs:
 
       - name: Add EC2 to known hosts
         run: |
-          ssh-keyscan -H 54.172.62.206 >> ~/.ssh/known_hosts
+          ssh-keyscan -H ec2-54-172-62-206 >> ~/.ssh/known_hosts
 
       - name: Deploy to EC2
         run: |
-          ssh ubuntu@54.172.62.206 "bash -s" << 'EOF'
+          ssh ubuntu@ec2-54-172-62-206 "bash -s" << 'EOF'
           cd actions-runner/_work
           git pull origin main
           # Add any additional build or restart commands here
